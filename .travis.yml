@@ -9,7 +9,7 @@ addons:
     - ubuntu-toolchain-r-test
     packages:
     - libdlib-dev
-    -libopenblas-dev
+    - libopenblas-dev
     - g++-8
 env:
   - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
