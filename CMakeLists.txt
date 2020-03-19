@@ -3,17 +3,18 @@ cmake_minimum_required(VERSION 3.12)
 project(kkmeans VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 find_package(Threads REQUIRED)
-find_package(dlib openblas REQUIRED)
+find_package(dlib REQUIRED)
+find_package(openblas REQUIRED)
 
 add_executable(${PROJECT_NAME} main.cpp)
-
-target_link_libraries(${PROJECT_NAME} dlib openblas)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
   CXX_STANDARD 17
   CXX_STANDARD_REQUIRED ON
   COMPILE_OPTIONS "-Wpedantic;-Wall;-Wextra"
 )
+
+target_link_libraries(${PROJECT_NAME} dlib openblas)
 
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
 
