@@ -6,15 +6,23 @@ compiler: gcc
 addons:
   apt:
     sources:
-    - 'deb http://archive.ubuntu.com/ubuntu xenial main universe'
+    - sourceline: "deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe"
+    - ubuntu-toolchain-r-test
     packages:
     - libdlib-dev
+    - liblapack-dev
     - libopenblas-dev
     - g++-8
 env:
   - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
 before_install:
   - eval "${MATRIX_EVAL}"
+install:
+  - git clone https://github.com/davisking/dlib.git
+  - cd dlib
+  - cmake .
+  - cmake --build .
+  - cd ..
 script:
 - cmake .
 - cmake --build .
