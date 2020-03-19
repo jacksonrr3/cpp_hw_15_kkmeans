@@ -108,7 +108,7 @@ int main(int args, char ** argv)
     //генерация файлов входных данных
     // generate_samples(50);
     //generate_starsky(200);
-
+ 
     //ввод данных
     //std::ifstream input;
     //input.open("Kkmeans_example.txt");
