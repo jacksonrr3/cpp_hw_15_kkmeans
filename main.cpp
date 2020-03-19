@@ -13,6 +13,7 @@ typedef matrix<double, 2, 1> sample_type;
 typedef radial_basis_kernel<sample_type> kernel_type;
 
 void generate_samples(const long num) {
+   
     std::vector<sample_type> s;
     sample_type m;
     dlib::rand rnd;
