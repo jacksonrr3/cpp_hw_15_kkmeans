@@ -9,7 +9,7 @@ add_executable(${PROJECT_NAME} main.cpp)
 
 find_package(dlib REQUIRED)
 
-target_link_libraries(${PROJECT_NAME} dlib::dlib)
+target_link_libraries(${PROJECT_NAME} dlib openblas)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
   CXX_STANDARD 14
