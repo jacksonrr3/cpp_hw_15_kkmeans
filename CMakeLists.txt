@@ -1,0 +1,31 @@
+cmake_minimum_required(VERSION 3.2)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
+
+project(kkmeans VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+
+add_executable(${PROJECT_NAME} main.cpp)
+
+find_package(dlib REQUIRED)
+
+target_link_libraries(${PROJECT_NAME} dlib::dlib)
+
+set_target_properties(${PROJECT_NAME} PROPERTIES
+  CXX_STANDARD 14
+  CXX_STANDARD_REQUIRED ON
+  COMPILE_OPTIONS "-Wpedantic;-Wall;-Wextra"
+)
+
+install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
+
+set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
+set(CPACK_PACKAGE_VERSION_MINOR "${PROJECT_VERSION_MINOR}")
+set(CPACK_PACKAGE_VERSION_PATCH "${PROJECT_VERSION_PATCH}")
+
+set(CPACK_PACKAGE_CONTACT jacksonrr3@yandex.ru)
+
+set(CPACK_GENERATOR DEB)
+
+set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
+
+include (CPack)
