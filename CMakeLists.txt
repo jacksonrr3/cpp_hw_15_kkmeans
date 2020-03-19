@@ -3,8 +3,6 @@ cmake_minimum_required(VERSION 3.12)
 project(kkmeans VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 find_package(Threads REQUIRED)
-find_package(dlib REQUIRED)
-find_package(openblas REQUIRED)
 
 add_executable(${PROJECT_NAME} main.cpp)
 
