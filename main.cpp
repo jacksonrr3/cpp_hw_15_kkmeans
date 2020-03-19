@@ -92,7 +92,6 @@ void generate_starsky(const long num) {
  }
 
 
-
 int main(int args, char ** argv)
 {
         
