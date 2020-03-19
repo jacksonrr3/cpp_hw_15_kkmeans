@@ -121,7 +121,7 @@ int main(int args, char ** argv)
         m(1) = std::stod(str.substr(it+1));
         samples.push_back(m);
     }
-    // input.close();
+
     const long num = samples.size();
  
     test.set_number_of_centers(std::atoi(argv[1]));
