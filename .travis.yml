@@ -6,7 +6,7 @@ compiler: gcc
 addons:
   apt:
     sources:
-    - ubuntu-toolchain-r-test
+    - 'deb http://archive.ubuntu.com/ubuntu xenial main universe'
     packages:
     - libdlib-dev
     - libopenblas-dev
