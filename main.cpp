@@ -114,13 +114,15 @@ int main(int args, char ** argv)
     //input.open("Kkmeans_example.txt");
     //input.open("Kkmeans_starsky.txt");
    //  while (std::getline(input, str)) {
+    
     while (std::getline(std::cin, str)) {
         auto it = str.find(";");
         m(0) = std::stod(str.substr(0, it));
         m(1) = std::stod(str.substr(it+1));
         samples.push_back(m);
     }
-
+    //input.close();
+    
     const long num = samples.size();
  
     test.set_number_of_centers(std::atoi(argv[1]));
