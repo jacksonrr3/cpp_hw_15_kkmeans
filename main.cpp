@@ -78,7 +78,7 @@ void generate_starsky(const long num) {
      sample_type m;
     dlib::rand rnd;
     
-    for (size_t i = 0; i < num; ++i)
+    for (long i = 0; i < num; ++i)
     {
         m(0) = 100 * rnd.get_random_double() * ((rnd.get_random_double() < 0.5) ? -1 : 1);
         m(1) = 100 * rnd.get_random_double() * ((rnd.get_random_double() < 0.5) ? -1 : 1);
@@ -93,7 +93,7 @@ void generate_starsky(const long num) {
  }
 
 
-int main(int args, char ** argv)
+int main(int, char ** argv)
 {
         
     kcentroid<kernel_type> kc(kernel_type(0.1), 0.01, 8);
@@ -124,7 +124,7 @@ int main(int args, char ** argv)
     }
     //input.close();
     
-    const long num = samples.size();
+    //const long num = samples.size();
  
     test.set_number_of_centers(std::atoi(argv[1]));
     pick_initial_centers(std::atoi(argv[1]), initial_centers, samples, test.get_kernel());
